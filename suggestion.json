@@ -1,0 +1,80 @@
+{
+    "data": [
+        {
+            "category": "decouverte",
+            "imageUrl": "https://picsum.photos/200/300",
+            "unlockCategoryOrder": 3,
+            "nextCategoryToUnlock": "Indéfini",
+            "subcategories": [
+                {
+                    "subcategory": "voyage",
+                    "imageUrl": "",
+                    "description": "Rien ne vaut une petite escapade dans les grandes montagnes pour un pur plaisir ",
+                    "questionCount": 2,
+                    "questions": []
+                }
+            ]
+        },
+        {
+            "category": "remerciement",
+            "imageUrl": "https://picsum.photos/200/300",
+            "unlockCategoryOrder": 1,
+            "nextCategoryToUnlock": "salutation",
+            "subcategories": [
+                {
+                    "subcategory": "fete",
+                    "imageUrl": "https://dummyimage.com/300x250/663366/fff",
+                    "description": "Assister à une fete mes dames et monsieurs, ca a l'air distrayant comme toujours",
+                    "questionCount": 2,
+                    "questions": []
+                },
+                {
+                    "subcategory": "mariage",
+                    "imageUrl": "https://dummyimage.com/300x200/000/fff",
+                    "description": "Allez au mariage de votre frere ou soeur ce la vous fera du bien rien en pensant",
+                    "questionCount": 3,
+                    "questions": []
+                }
+            ]
+        },
+        {
+            "category": "salutation",
+            "imageUrl": "https://picsum.photos/200",
+            "unlockCategoryOrder": 2,
+            "nextCategoryToUnlock": "vide",
+            "subcategories": [
+                {
+                    "subcategory": "au revoir",
+                    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/teny-malagasy-api.appspot.com/o/images%2Fquestions%2Fmasquotte.png?alt=media&token=e6a95748-72d8-4ed5-bfa1-f9a3532067b6",
+                    "description": "Ceci est la description de la sous-catégorie au revoir et ca va etre un peu cours",
+                    "questionCount": 1,
+                    "questions": []
+                },
+                {
+                    "subcategory": "bonjour",
+                    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/teny-malagasy-api.appspot.com/o/images%2Fquestions%2Fanimation-base.png?alt=media&token=220c48c9-819c-4718-8b1c-de0da659ff11",
+                    "description": "Ceci est la description de la sous-catégorie bonjour et vous allez saluer des personnes",
+                    "questionCount": 2,
+                    "questions": []
+                }
+            ]
+        },
+        {
+            "category": "sport",
+            "imageUrl": "https://firebasestorage.googleapis.com/v0/b/teny-malagasy-api.appspot.com/o/images%2Fquestions%2Fanimation-base.png?alt=media&token=220c48c9-819c-4718-8b1c-de0da659ff11",
+            "unlockCategoryOrder": 4,
+            "nextCategoryToUnlock": "Indéfini",
+            "subcategories": [
+                {
+                    "subcategory": "basket",
+                    "imageUrl": "https://firebasestorage.googleapis.com/v0/b/teny-malagasy-api.appspot.com/o/images%2Fquestions%2FEmoji-Happy-Sad-3--Streamline-Ux.png?alt=media&token=b62f7121-3849-4f4e-96ed-c0e6ef2afb2a",
+                    "description": "Dunnnnnk, Lebron James est de retour dans les jeux olympiques de Paris, Yuhuh",
+                    "questionCount": 1,
+                    "questions": []
+                }
+            ]
+        }
+    ],
+    "result_code": "200",
+    "result_message": "succes"
+}
