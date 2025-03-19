@@ -56,4 +56,39 @@ class AuthRepository @Inject constructor(
             AuthResult.Failure(e)
         }
     }
+
+    // NOUVEAU CREATE EN LIANT L'ANONYME AU NOUVEAU UTILISATEUR 
+    fun createFirebaseUser(userRequest: AuthUserRequest): Flow<AuthResult<FirebaseUser>> = flow {
+        try {
+            val currentUser = firebaseAuth.currentUser
+            if (currentUser != null && currentUser.isAnonymous) {
+                // Lier l'utilisateur anonyme à l'email et au mot de passe
+                val credential = EmailAuthProvider.getCredential(userRequest.email, userRequest.password)
+                val authResult = currentUser.linkWithCredential(credential).await()
+
+                // Récupérer l'utilisateur lié
+                val firebaseUser = authResult.user ?: throw Exception("Erreur lors de la liaison de l'utilisateur.")
+
+                // Mettre à jour le profil utilisateur si nécessaire
+                val profileUpdates = UserProfileChangeRequest.Builder()
+                    .setDisplayName(userRequest.displayName)
+                    .build()
+                firebaseUser.updateProfile(profileUpdates).await()
+
+                // Envoyer un mail de vérification
+                firebaseUser.sendEmailVerification().await()
+
+                // Emettre un succès avec l'utilisateur lié
+                emit(AuthResult.Success(firebaseUser))
+            } else {
+                AuthResult.Failure(Exception("Utilisateur non trouvé"))
+            }
+        } catch (e: FirebaseAuthUserCollisionException) {
+            // Gérer le cas où l'utilisateur existe déjà
+            emit(AuthResult.EmailExist)
+        } catch (e: Exception) {
+            // En cas d'erreur, émettre un échec
+            emit(AuthResult.Failure(e))
+        }
+    }
 }
